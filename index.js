@@ -14,7 +14,12 @@ function destructivelyUpdateObjectWithKeyAndValue(obj, key, value) {
 
 function deleteFromObjectByKey(obj, key) {
   var tmpObj = {};
-  // returns "true" even if key doesn not exist in object, for simple stuff
+  // delete key from result of obj copied into tmpObj
   delete Object.assign(tmpObj, obj)[key];
   return tmpObj;
+}
+
+function objectDestructivelyDeleteFromObjectByKey(obj, key) {
+  delete obj[key];
+  return obj;
 }
